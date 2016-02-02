@@ -32,4 +32,9 @@ function getPoints(milestone) {
   return planned;
 }
 
-console.log(getPoints(prompt("What's your milestone name?")));
+var lines="";
+for (var line of getPoints(prompt("What's your milestone name?"))) {
+  lines += line + "\n";
+}
+
+console.log(lines);
