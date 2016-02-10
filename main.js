@@ -15,7 +15,11 @@ function getPoints(milestone) {
       var number = card.find('.card-number').text();
       var assignee = card.find('img').attr('tooltip');
       var title = card.find('.title').val();
-      var prs = card.find('.pr-left button span').text();
+      var prs = $.map(
+        card.find('.pr-left button span'),
+        function (el) { return $(el).text(); }
+      ).join(',');
+
       planned.push([
         'Y',  // Planned
         '',   // Completed?
